@@ -6,7 +6,7 @@
 /*   By: nhuskov <nhuskov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 13:35:38 by nhuskov           #+#    #+#             */
-/*   Updated: 2026/10/16 14:41:15 by nhuskov          ###   ########.fr       */
+/*   Updated: 2026/10/16 18:26:50 by nhuskov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	has_duplicate(t_stack *stack, int num)
 		return (0);
 	while (stack)
 	{
-		if (stack->value == num)
+		if (stack->values == num)
 			return (1);
 		stack = stack->next;
 	}
@@ -50,13 +50,13 @@ void	parse_and_fill_stack(t_stack **stack_a, char **args)
 	while (args[i])
 	{
 		if (!is_valid_syntax(args[i]))
-			ERROR(1, 2);
-		num = ATOL(args[i]);
+			error_free(stack_a, args);
+		num = ft_atol(args[i]);
 		if (num > 2147483647 || num < -2147483648)
-			ERROR(1, 2);
+			error_free(stack_a, args);
 		if (has_duplicate(*stack_a, (int)num))
-			ERROR(1, 2);
-		STACKADDBACK(1, 2);
+			error_free(stack_a, args);
+		stack_add_end(stack_a, stack_new((int)num));
 		i++;
 	}
 }
