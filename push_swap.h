@@ -12,10 +12,14 @@ typedef struct s_stack
 
 void	swap(t_stack *stack);
 void	push(t_stack *src, t_stack *dest);
+
 void	rotate(t_stack *stack);
 void	reverse_rotate(t_stack *stack);
 
 
 
+void	free_args(char **args);
+void	free_stack(t_stack *stack);
+void	error_free(t_stack *stack_a, t_stack *stack_b, char **args);
 
 #endif
