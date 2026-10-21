@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   base_stack_operations.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nhuskov <nhuskov@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/21 18:44:54 by nhuskov           #+#    #+#             */
+/*   Updated: 2026/10/21 18:45:17 by nhuskov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void push(t_stack *src, t_stack *dest)
+void	push(t_stack *src, t_stack *dest)
 {
-	int i;
+	int	i;
 
 	if (src->size == 0)
 		return ;
@@ -55,7 +67,7 @@ void	rotate(t_stack *stack)
 {
 	int	tmp;
 	int	i;
-	
+
 	if (stack->size < 2)
 		return ;
 	tmp = stack->values[0];
