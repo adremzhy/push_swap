@@ -7,8 +7,8 @@
 typedef struct s_stack
 {
 	int	size;
-	int *values;
-} t_stack;
+	int	*values;
+}	t_stack;
 
 void	swap(t_stack *stack);
 void	push(t_stack *src, t_stack *dest);
