@@ -6,13 +6,13 @@
 /*   By: nhuskov <nhuskov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 14:41:12 by nhuskov           #+#    #+#             */
-/*   Updated: 2026/10/16 18:26:49 by nhuskov          ###   ########.fr       */
+/*   Updated: 2026/10/21 19:46:13 by nhuskov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void free_stack(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
 	if (!stack)
 		return ;
@@ -21,7 +21,7 @@ void free_stack(t_stack *stack)
 	stack->size = 0;
 }
 
-void free_args(char **args)
+void	free_args(char **args)
 {
 	int	i;
 
@@ -36,7 +36,7 @@ void free_args(char **args)
 	free(args);
 }
 
-void error_free(t_stack *stack_a, t_stack *stack_b, char **args)
+void	error_free(t_stack *stack_a, t_stack *stack_b, char **args)
 {
 	free_stack(stack_a);
 	free_stack(stack_b);

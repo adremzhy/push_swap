@@ -6,7 +6,7 @@
 /*   By: nhuskov <nhuskov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 13:35:38 by nhuskov           #+#    #+#             */
-/*   Updated: 2026/10/16 18:26:50 by nhuskov          ###   ########.fr       */
+/*   Updated: 2026/10/21 19:45:48 by nhuskov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	is_valid_syntax(char *str)
 			return (0);
 		i++;
 	}
-	return(1);
+	return (1);
 }
 
 int	has_duplicate(t_stack *stack, int num)
