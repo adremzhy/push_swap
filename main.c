@@ -4,21 +4,25 @@ int	main(int argc, char **argv)
 {
 	t_stack	a;
 	t_stack	b;
+	char	**args;
 
 	if (argc < 2)
 		return (0);
-	a.values = NULL;
-	a.size = 0;
-	b.values = NULL;
-	b.size = 0;
-	a.values = malloc(sizeof(int) * (argc - 1));
-	if (a.values == NULL)
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
+	else
+		args = argv + 1;
+	if (!args || !args[0])
+		error_free(NULL, NULL, args);
+	if (!init_stacks(&a, &b, count_args(args))
+		|| !parse_and_fill_stack(&a, args))
+	{
+		if (argc == 2)
+			free_args(args);
 		error_free(&a, &b, NULL);
-	b.values = malloc(sizeof(int) * (argc - 1));
-	if (b.values == NULL)
-		error_free(&a, &b, NULL);
-	if (!parse_and_fill_stack(&a, argv + 1))
-		error_free(&a, &b, NULL);
+	}
+	if (argc == 2)
+		free_args(args);
 	free(a.values);
 	free(b.values);
 	return (0);

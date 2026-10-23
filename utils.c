@@ -45,3 +45,30 @@ void	error_free(t_stack *stack_a, t_stack *stack_b, char **args)
 	write(2, "Error\n", 6);
 	exit(1);
 }
+
+int	count_args(char **args)
+{
+	int	count;
+
+	count = 0;
+	while (args[count] != NULL)
+	{
+		count++;
+	}
+	return (count);
+}
+
+int	init_stacks(t_stack *a, t_stack *b, int count)
+{
+	a->values = NULL;
+	a->size = 0;
+	b->values = NULL;
+	b->size = 0;
+	a->values = malloc(sizeof(int) * count);
+	if (!a->values)
+		return (0);
+	b->values = malloc(sizeof(int) * count);
+	if (!b->values)
+		return (0);
+	return (1);
+}

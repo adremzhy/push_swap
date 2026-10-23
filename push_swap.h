@@ -22,6 +22,9 @@ int		parse_int(const char *str, int *out);
 int		has_duplicate(t_stack *stack, int num);
 int		is_valid_syntax(char *str);
 
+int		init_stacks(t_stack *a, t_stack *b, int count);
+int		count_args(char **args);
+
 void	free_args(char **args);
 void	free_stack(t_stack *stack);
 void	error_free(t_stack *stack_a, t_stack *stack_b, char **args);

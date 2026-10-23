@@ -64,6 +64,7 @@ int	parse_and_fill_stack(t_stack *stack_a, char **args)
 	}
 	return (1);
 }
+
 int	parse_int(const char *str, int *out)
 {
 	int		i;
