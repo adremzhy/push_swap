@@ -10,16 +10,22 @@ typedef struct s_stack
 	int	*values;
 }	t_stack;
 
+// basic operations functions
 void	swap(t_stack *stack);
 void	push(t_stack *src, t_stack *dest);
 void	rotate(t_stack *stack);
 void	reverse_rotate(t_stack *stack);
 
-
+// parsing functions
+int		parse_and_fill_stack(t_stack *stack_a, char **args);
+int		parse_int(const char *str, int *out);
+int		has_duplicate(t_stack *stack, int num);
+int		is_valid_syntax(char *str);
 
 void	free_args(char **args);
 void	free_stack(t_stack *stack);
 void	error_free(t_stack *stack_a, t_stack *stack_b, char **args);
+
 void	sa(t_stack **stack_a);
 void	sb(t_stack **stack_b);
 void	ss(t_stack **stack_a, t_stack **stack_b);

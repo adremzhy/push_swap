@@ -46,25 +46,46 @@ int	has_duplicate(t_stack *stack, int num)
 	return (0);
 }
 
-void	parse_and_fill_stack(t_stack *stack_a)
+int	parse_and_fill_stack(t_stack *stack_a, char **args)
 {
-	int	*values;
+	int	i;
+	int	num;
 
+	i = 0;
+	while (args[i])
+	{
+		if (!parse_int(args[i], &num))
+			return (0);
+		if (has_duplicate(stack_a, num))
+			return (0);
+		stack_a->values[stack_a->size] = num;
+		stack_a->size++;
+		i++;
+	}
+	return (1);
 }
-int	parse_int(const char *str, int 	*out)
+int	parse_int(const char *str, int *out)
 {
 	int		i;
 	int		sign;
 	long	result;
 
-	i = 0;
+	i = (str[0] == '-' || str[0] == '+');
 	sign = 1;
 	result = 0;
 	if (str[0] == '-')
-	{
 		sign = -1;
+	if (str[i] == '\0')
+		return (0);
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		result = result * 10 + (str[i] - '0');
+		if (result * sign < INT_MIN || result * sign > INT_MAX)
+			return (0);
 		i++;
 	}
-	else if (str[0] == '+')
-		i++;
+	*out = (int)(result * sign);
+	return (1);
 }
