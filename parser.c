@@ -51,3 +51,20 @@ void	parse_and_fill_stack(t_stack *stack_a)
 	int	*values;
 
 }
+int	parse_int(const char *str, int 	*out)
+{
+	int		i;
+	int		sign;
+	long	result;
+
+	i = 0;
+	sign = 1;
+	result = 0;
+	if (str[0] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+	else if (str[0] == '+')
+		i++;
+}
