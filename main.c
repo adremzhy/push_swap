@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 	}
 	if (argc == 2)
 		free_args(args);
+	sort_small(&a);
 	free(a.values);
 	free(b.values);
 	return (0);
