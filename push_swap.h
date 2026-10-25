@@ -27,13 +27,20 @@ int		count_args(char **args);
 
 void	free_args(char **args);
 void	free_stack(t_stack *stack);
-void	error_free(t_stack *stack_a, t_stack *stack_b, char **args);\
+void	error_free(t_stack *stack_a, t_stack *stack_b, char **args);
+void	min_to_top(t_stack *a);
+
 
 // sort utils
 int		is_sorted(t_stack *stack);
 void	sort_two(t_stack *a);
 void	sort_three(t_stack *a);
-void	sort_small(t_stack *a);
+void	sort_four_five(t_stack *a, t_stack *b);
+void	sort_small(t_stack *a, t_stack *b);
+int		min_index(t_stack *a);
+void	sort_simple(t_stack *a, t_stack *b);
+
+
 
 
 

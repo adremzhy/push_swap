@@ -22,7 +22,7 @@ void	sort_three(t_stack *a)
 		sa(a);
 }
 
-void	sort_small(t_stack *a)
+void	sort_small(t_stack *a, t_stack *b)
 {
 	if (is_sorted(a))
 		return ;
@@ -30,4 +30,20 @@ void	sort_small(t_stack *a)
 		sort_two(a);
 	else if (a->size == 3)
 		sort_three(a);
+	else if (a->size == 4 || a->size == 5)
+		sort_four_five(a, b);
+	else if (a->size > 5)
+		sort_simple(a, b);
+}
+
+void	sort_four_five(t_stack *a, t_stack *b)
+{
+	while (a->size > 3)
+	{
+		min_to_top(a);
+		pb(a, b);
+	}
+	sort_three(a);
+	while (b->size > 0)
+		pa(a, b);
 }

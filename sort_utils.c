@@ -13,3 +13,43 @@ int	is_sorted(t_stack *stack)
 	}
 	return (1);
 }
+
+int	min_index(t_stack *a)
+{
+	int	i;
+	int	min;
+
+	min = 0;
+	i = 1;
+	while (i < a->size)
+	{
+		if (a->values[i] < a->values[min])
+			min = i;
+		i++;
+	}
+	return (min);
+}
+
+void	min_to_top(t_stack *a)
+{
+	int	pos;
+
+	pos = min_index(a);
+	if (pos <= a->size / 2)
+	{
+		while (pos > 0)
+		{
+			ra(a);
+			pos--;
+		}
+	}
+	else
+	{
+		pos = a->size - pos;
+		while (pos > 0)
+		{
+			rra(a);
+			pos--;
+		}
+	}
+}
