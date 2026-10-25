@@ -33,7 +33,7 @@ void	sort_small(t_stack *a, t_stack *b)
 	else if (a->size == 4 || a->size == 5)
 		sort_four_five(a, b);
 	else if (a->size > 5)
-		sort_simple(a, b);
+		sort_medium(a, b, get_chunk_size(a->size));
 }
 
 void	sort_four_five(t_stack *a, t_stack *b)

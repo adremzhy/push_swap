@@ -53,3 +53,43 @@ void	min_to_top(t_stack *a)
 		}
 	}
 }
+
+int	max_index(t_stack *a)
+{
+	int	max;
+	int	i;
+
+	max = 0;
+	i = 1;
+	while (i < a->size)
+	{
+		if (a->values[i] > a->values[max])
+			max = i;
+		i++;
+	}
+	return (max);
+}
+
+void	max_to_top(t_stack *b)
+{
+	int	pos;
+
+	pos = max_index(b);
+	if (pos <= b->size / 2)
+	{
+		while (pos > 0)
+		{
+			rb(b);
+			pos--;
+		}
+	}
+	else
+	{
+		pos = b->size - pos;
+		while (pos > 0)
+		{
+			rrb(b);
+			pos--;
+		}
+	}
+}

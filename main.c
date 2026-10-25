@@ -15,7 +15,7 @@ int	main(int argc, char **argv)
 	if (!args || !args[0])
 		error_free(NULL, NULL, args);
 	if (!init_stacks(&a, &b, count_args(args))
-		|| !parse_and_fill_stack(&a, args))
+		|| !parse_and_fill_stack(&a, args) || !set_ranks(&a))
 	{
 		if (argc == 2)
 			free_args(args);
