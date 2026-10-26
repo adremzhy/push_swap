@@ -41,7 +41,7 @@ int		min_index(t_stack *a);
 int		max_index(t_stack *a);
 void	min_to_top(t_stack *a);
 void	max_to_top(t_stack *b);
-void	sort_dispatch(t_stack *a, t_stack *b, int strategy)
+void	sort_dispatch(t_stack *a, t_stack *b, int strategy);
 
 
 // sort small

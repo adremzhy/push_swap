@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	run_prog(int argc, char **argv, int strategy)
 {
 	t_stack	a;
 	t_stack	b;
@@ -23,8 +23,25 @@ int	main(int argc, char **argv)
 	}
 	if (argc == 2)
 		free_args(args);
-	sort_small(&a, &b);
+	sort_dispatch(&a, &b, strategy);
 	free(a.values);
 	free(b.values);
 	return (0);
+}
+
+int	main(int argc, char **argv)
+{
+	int	strategy;
+
+	if (argc < 2)
+		return (0);
+	strategy = get_strategy(argv[1]);
+	if (strategy)
+	{
+		argv++;
+		argc--;
+	}
+	else
+		strategy = STRAT_ADAPTIVE;
+	return (run_prog(argc, argv, strategy));
 }
