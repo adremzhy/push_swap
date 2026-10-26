@@ -4,6 +4,11 @@
 # include <stdlib.h>
 # include "libft/libft.h"
 
+# define STRAT_SIMPLE 1
+# define STRAT_MEDIUM 2
+# define STRAT_COMPLEX 3
+# define STRAT_ADAPTIVE 4
+
 typedef struct s_stack
 {
 	int	size;
@@ -32,15 +37,24 @@ int		get_chunk_size(int n);
 
 // sort utils
 int		is_sorted(t_stack *stack);
-void	sort_two(t_stack *a);
-void	sort_three(t_stack *a);
-void	sort_four_five(t_stack *a, t_stack *b);
-void	sort_small(t_stack *a, t_stack *b);
-void	sort_simple(t_stack *a, t_stack *b);
 int		min_index(t_stack *a);
 int		max_index(t_stack *a);
 void	min_to_top(t_stack *a);
 void	max_to_top(t_stack *b);
+void	sort_dispatch(t_stack *a, t_stack *b, int strategy)
+
+
+// sort small
+void	sort_two(t_stack *a);
+void	sort_three(t_stack *a);
+void	sort_four_five(t_stack *a, t_stack *b);
+void	sort_simple(t_stack *a, t_stack *b);
+void	sort_small(t_stack *a, t_stack *b);
+
+// sort adaptive & utils
+int		get_strategy(char *arg);
+double	disorder(t_stack *stack);
+void	sort_adaptive(t_stack *a, t_stack *b);
 
 // ranks for medium sort
 int	get_rank(t_stack *a, int index);
