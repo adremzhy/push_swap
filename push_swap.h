@@ -47,11 +47,15 @@ int	get_rank(t_stack *a, int index);
 int	*create_ranks(t_stack *a);
 int	set_ranks(t_stack *a);
 
-
 // sort medium
 int		find_below(t_stack *a, int limit);
 void	push_chunk(t_stack *a, t_stack *b, int limit);
 void	sort_medium(t_stack *a, t_stack *b, int	chunk_size);
+
+// sort complex radix
+int		get_bits(int max_rank);
+void	radix_pass(t_stack *a, t_stack *b, int bit);
+void	sort_complex(t_stack *a, t_stack *b);
 
 // operation calls
 void	sa(t_stack *stack_a);
