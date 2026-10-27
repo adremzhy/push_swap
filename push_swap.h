@@ -21,11 +21,45 @@
 # define STRAT_COMPLEX 3
 # define STRAT_ADAPTIVE 4
 
+// op indexes
+typedef enum enum_op
+{
+	op_sa,
+	op_sb,
+	op_ss,
+	op_pa,
+	op_pb,
+	op_ra,
+	op_rb,
+	op_rr,
+	op_rra,
+	op_rrb,
+	op_rrr,
+	op_counts
+}	t_op;
+
+// struct for bench
+typedef struct s_bench
+{
+	int		enabled;
+	long	total;
+	long	counts[op_counts];
+}	t_bench;
+
+// struct for stacks 
 typedef struct s_stack
 {
-	int	size;
-	int	*values;
+	int		size;
+	int		*values;
+	t_bench *bench;
 }	t_stack;
+
+// functions for brench
+void	bench_initialize(t_bench *bench, int enbld);
+void	bench_record(t_bench *bench, t_op op_index);
+void	bench_setup(t_stack *a, t_stack *b, t_bench *bench);
+
+
 
 // basic operations functions
 void	swap(t_stack *stack);
@@ -46,6 +80,8 @@ void	free_args(char **args);
 void	free_stack(t_stack *stack);
 void	error_free(t_stack *stack_a, t_stack *stack_b, char **args);
 int		get_chunk_size(int n);
+void	prepare_stacks(int argc, char **argv, t_stack *a, t_stack *b);
+
 
 // sort utils
 int		is_sorted(t_stack *stack);
