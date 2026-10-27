@@ -6,7 +6,7 @@
 /*   By: nhuskov <nhuskov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 20:00:20 by nhuskov           #+#    #+#             */
-/*   Updated: 2026/10/21 20:32:28 by nhuskov          ###   ########.fr       */
+/*   Updated: 2026/10/27 16:57:04 by nhuskov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ double	disorder(t_stack *stack)
 		return (0.0);
 	i = 0;
 	count = 0;
-	temp = stack->size;
-	pairs = (temp * (temp - 1)) / 2.0;
+	pairs = (stack->size * (stack->size - 1)) / 2.0;
 	while (i < stack->size - 1)
 	{
 		j = i + 1;
