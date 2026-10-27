@@ -18,7 +18,8 @@ SRCS	=	base_stack_operations.c		\
 			sort_simple.c				\
 			sort_small.c				\
 			sort_utils.c				\
-			utils.c
+			utils.c						\
+			bench.c
 
 OBJS	=	$(SRCS:.c=.o)
 LIBFT	=	libft/libft.a

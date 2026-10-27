@@ -14,11 +14,7 @@
 
 void	sort_dispatch(t_stack *a, t_stack *b, int strategy)
 {
-	if (a->size <= 5)
-	{
-		sort_small(a, b);
-		return ;
-	}
+	a->bench->strategy = strategy;
 	if (strategy == STRAT_SIMPLE)
 		sort_simple(a, b);
 	else if (strategy == STRAT_MEDIUM)

@@ -29,3 +29,29 @@ void	bench_setup(t_stack *a, t_stack *b, t_bench *bench)
 	a->bench = bench;
 	b->bench = bench;
 }
+
+void	bench_printlong(long number)
+{
+	if (number >= 10)
+		bench_printlong(number / 10);
+	ft_putchar_fd(number % 10 + '0', 2);
+}
+
+void	bench_print(t_bench *bench)
+{
+	if (bench->enabled == 0)
+		return ;
+	ft_putstr_fd("[bench]\n", 2);
+	bench_print_disorder(bench);
+	if (bench->strategy == STRAT_SIMPLE)
+		ft_putstr_fd("strategy: simple 0(n^2)\n", 2);
+	else if (bench->strategy == STRAT_MEDIUM)
+		ft_putstr_fd("strategy: medium 0(n*sqrt(n))\n", 2);
+	else if (bench->strategy == STRAT_COMPLEX)
+		ft_putstr_fd("strategy: complex 0(n*log(n))\n", 2);
+	ft_putstr_fd("total: ", 2);
+	bench_printlong(bench->total);
+	ft_putchar_fd('\n', 2);
+	bench_prints_counts(bench);
+	ft_putchar_fd('\n', 2);
+}

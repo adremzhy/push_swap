@@ -24,3 +24,10 @@ int	get_strategy(char *arg)
 		return (STRAT_ADAPTIVE);
 	return (0);
 }
+
+int	is_flag_bench(char *arg)
+{
+	if (ft_strncmp(arg, "--bench", 8) == 0)
+		return (1);
+	return (0);
+}

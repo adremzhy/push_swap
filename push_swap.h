@@ -44,6 +44,8 @@ typedef struct s_bench
 	int		enabled;
 	long	total;
 	long	counts[op_counts];
+	double	initial_disorder;
+	int		strategy;
 }	t_bench;
 
 // struct for stacks 
@@ -58,8 +60,11 @@ typedef struct s_stack
 void	bench_initialize(t_bench *bench, int enbld);
 void	bench_record(t_bench *bench, t_op op_index);
 void	bench_setup(t_stack *a, t_stack *b, t_bench *bench);
-
-
+void	bench_printlong(long number);
+void	bench_print(t_bench *bench);
+int		is_flag_bench(char *arg);
+void	bench_print_disorder(t_bench *bench);
+void	bench_prints_counts(t_bench *bench);
 
 // basic operations functions
 void	swap(t_stack *stack);

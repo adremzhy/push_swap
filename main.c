@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	run_prog(int argc, char **argv, int strategy)
+int	run_prog(int argc, char **argv, int strategy, int bench_enbld)
 {
 	t_stack	a;
 	t_stack	b;
@@ -22,7 +22,10 @@ int	run_prog(int argc, char **argv, int strategy)
 		return (0);
 	prepare_stacks(argc, argv, &a, &b);
 	bench_setup(&a, &b, &bench);
+	bench.initial_disorder = disorder(&a);
+	bench.enabled = bench_enbld;
 	sort_dispatch(&a, &b, strategy);
+	bench_print(&bench);
 	free(a.values);
 	free(b.values);
 	return (0);
@@ -52,16 +55,22 @@ void	prepare_stacks(int argc, char **argv, t_stack *a, t_stack *b)
 int	main(int argc, char **argv)
 {
 	int	strategy;
+	int	bench_enbld;
 
+	bench_enbld = 0;
 	if (argc < 2)
 		return (0);
-	strategy = get_strategy(argv[1]);
-	if (strategy)
+	strategy = STRAT_ADAPTIVE;
+	while (argc > 1)
 	{
+		if (is_flag_bench(argv[1]))
+			bench_enbld = 1;
+		else if (get_strategy(argv[1]) != 0)
+			strategy = get_strategy(argv[1]);
+		else
+			break ;
 		argv++;
 		argc--;
 	}
-	else
-		strategy = STRAT_ADAPTIVE;
-	return (run_prog(argc, argv, strategy));
+	return (run_prog(argc, argv, strategy, bench_enbld));
 }
