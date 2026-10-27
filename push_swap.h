@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nhuskov <nhuskov@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/27 16:24:02 by nhuskov           #+#    #+#             */
+/*   Updated: 2026/10/27 16:24:40 by nhuskov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -43,7 +55,6 @@ void	min_to_top(t_stack *a);
 void	max_to_top(t_stack *b);
 void	sort_dispatch(t_stack *a, t_stack *b, int strategy);
 
-
 // sort small
 void	sort_two(t_stack *a);
 void	sort_three(t_stack *a);
@@ -57,14 +68,14 @@ double	disorder(t_stack *stack);
 void	sort_adaptive(t_stack *a, t_stack *b);
 
 // ranks for medium sort
-int	get_rank(t_stack *a, int index);
-int	*create_ranks(t_stack *a);
-int	set_ranks(t_stack *a);
+int		get_rank(t_stack *a, int index);
+int		*create_ranks(t_stack *a);
+int		set_ranks(t_stack *a);
 
 // sort medium
 int		find_below(t_stack *a, int limit);
 void	push_chunk(t_stack *a, t_stack *b, int limit);
-void	sort_medium(t_stack *a, t_stack *b, int	chunk_size);
+void	sort_medium(t_stack *a, t_stack *b, int chunk_size);
 
 // sort complex radix
 int		get_bits(int max_rank);

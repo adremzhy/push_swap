@@ -20,7 +20,7 @@ int	*create_ranks(t_stack *a)
 {
 	int	i;
 	int	*ranks;
-	
+
 	ranks = malloc(sizeof(int) * a->size);
 	if (!ranks)
 		return (NULL);
