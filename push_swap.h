@@ -20,6 +20,7 @@
 # define STRAT_COMPLEX 3
 # define STRAT_ADAPTIVE 4
 # define OPS_COUNT	11
+
 // op indexes
 typedef enum enum_op
 {
