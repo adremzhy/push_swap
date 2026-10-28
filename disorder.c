@@ -56,11 +56,9 @@ void	bench_print_disorder(t_bench *bench)
 
 void	bench_prints_counts(t_bench *bench)
 {
-	int		op_counts;
-	char	*op_names[op_counts];
+	char	*op_names[OPS_COUNT];
 	int		i;
 
-	op_counts = 11;
 	op_names[op_pa] = "pa";
 	op_names[op_pb] = "pb";
 	op_names[op_ra] = "ra";

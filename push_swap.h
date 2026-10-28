@@ -19,7 +19,7 @@
 # define STRAT_MEDIUM 2
 # define STRAT_COMPLEX 3
 # define STRAT_ADAPTIVE 4
-
+# define OPS_COUNT	11
 // op indexes
 typedef enum enum_op
 {
@@ -42,7 +42,7 @@ typedef struct s_bench
 {
 	int		enabled;
 	long	total;
-	long	counts[op_counts];
+	long	counts[OPS_COUNT];
 	double	initial_disorder;
 	int		strategy;
 }	t_bench;
