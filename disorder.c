@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nhuskov <nhuskov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adremzhy <adremzhy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 20:00:20 by nhuskov           #+#    #+#             */
-/*   Updated: 2026/10/27 16:57:04 by nhuskov          ###   ########.fr       */
+/*   Updated: 2026/10/28 15:17:28 by adremzhy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,11 @@ void	bench_print_disorder(t_bench *bench)
 
 void	bench_prints_counts(t_bench *bench)
 {
+	int		op_counts;
 	char	*op_names[op_counts];
 	int		i;
 
+	op_counts = 11;
 	op_names[op_pa] = "pa";
 	op_names[op_pb] = "pb";
 	op_names[op_ra] = "ra";

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nhuskov <nhuskov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adremzhy <adremzhy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 16:25:14 by nhuskov           #+#    #+#             */
-/*   Updated: 2026/10/27 16:25:43 by nhuskov          ###   ########.fr       */
+/*   Updated: 2026/10/28 15:23:49 by adremzhy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	get_chunk_size(int n)
 	int	size;
 
 	size = 1;
-	while ((long)(size + 1) * (size + 1) <= n)
+	while (((long)((size + 1) * (size + 1))) <= n)
 		size++;
 	return (size);
 }
