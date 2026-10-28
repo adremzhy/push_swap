@@ -142,8 +142,8 @@ big inputs.
 
 ## Contributions
 
-- **nhuskov**: <describe: e.g. parsing, ranks, disorder, adaptive strategy, bench>
-- **adremzhy**: <describe: e.g. stack operations, sorting strategies, Makefile>
+- **nhuskov**: parsing, ranks, disorder, adaptive strategy, bench
+- **adremzhy**: stack operations, sorting strategies, Makefile
 
 ## Resources
 
@@ -154,7 +154,4 @@ big inputs.
 
 ### Use of AI
 
-AI was used as a learning assistant: to explain concepts such as
-radix sort, algorithm complexity and the inversion count, to explain norminette
-errors, and to help write this README. All code was written by the team
-members.
+AI was used as a learning assistant: to explain concepts such as radix sort, algorithm complexity and the inversion count, to explain norminette errors, and to help write this README. All code was written by the team members.
