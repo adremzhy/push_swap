@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bench.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nhuskov <nhuskov@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/28 15:02:44 by nhuskov           #+#    #+#             */
+/*   Updated: 2026/10/28 15:02:44 by nhuskov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	bench_initialize(t_bench *bench, int enbld)
 {
-	int i;
+	int	i;
 
 	bench->enabled = enbld;
 	bench->total = 0;
-
 	i = 0;
 	while (i < op_counts)
 	{
