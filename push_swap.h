@@ -6,7 +6,7 @@
 /*   By: adremzhy <adremzhy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 16:24:02 by nhuskov           #+#    #+#             */
-/*   Updated: 2026/10/28 15:33:10 by adremzhy         ###   ########.fr       */
+/*   Updated: 2026/10/28 15:34:05 by adremzhy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct s_stack
 {
 	int		size;
 	int		*values;
-	t_bench *bench;
+	t_bench	*bench;
 }	t_stack;
 
 // functions for brench
