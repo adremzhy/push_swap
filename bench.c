@@ -52,15 +52,23 @@ void	bench_print(t_bench *bench)
 {
 	if (bench->enabled == 0)
 		return ;
-	ft_putstr_fd("[bench]\n", 2);
 	bench_print_disorder(bench);
+	ft_putstr_fd("[bench] strategy:  ", 2);
+	if (bench->selected_strategy == STRAT_ADAPTIVE)
+		ft_putstr_fd("Adaptive  /  ", 2);
+	else if (bench->selected_strategy == STRAT_SIMPLE)
+		ft_putstr_fd("Simple  /  ", 2);
+	else if (bench->selected_strategy == STRAT_MEDIUM)
+		ft_putstr_fd("Medium  /  ", 2);
+	else if (bench->selected_strategy == STRAT_COMPLEX)
+		ft_putstr_fd("Complex  /  ", 2);
 	if (bench->strategy == STRAT_SIMPLE)
-		ft_putstr_fd("strategy: simple O(n^2)\n", 2);
+		ft_putstr_fd("simple O(n^2)\n", 2);
 	else if (bench->strategy == STRAT_MEDIUM)
-		ft_putstr_fd("strategy: medium O(n*sqrt(n))\n", 2);
+		ft_putstr_fd("medium O(n*sqrt(n))\n", 2);
 	else if (bench->strategy == STRAT_COMPLEX)
-		ft_putstr_fd("strategy: complex O(n*log(n))\n", 2);
-	ft_putstr_fd("total: ", 2);
+		ft_putstr_fd("complex O(n*log(n))\n", 2);
+	ft_putstr_fd("[bench] total_ops: ", 2);
 	bench_printlong(bench->total);
 	ft_putchar_fd('\n', 2);
 	bench_prints_counts(bench);

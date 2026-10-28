@@ -46,6 +46,7 @@ typedef struct s_bench
 	long	counts[OPS_COUNT];
 	double	initial_disorder;
 	int		strategy;
+	int		selected_strategy;
 }	t_bench;
 
 // struct for stacks 

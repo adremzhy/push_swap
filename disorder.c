@@ -45,7 +45,7 @@ void	bench_print_disorder(t_bench *bench)
 	long	scaled;
 
 	scaled = (long)(bench->initial_disorder * 10000 + 0.5);
-	ft_putstr_fd("disorder: ", 2);
+	ft_putstr_fd("[bench] disorder:  ", 2);
 	bench_printlong(scaled / 100);
 	ft_putchar_fd('.', 2);
 	if (scaled % 100 < 10)
@@ -70,13 +70,24 @@ void	bench_prints_counts(t_bench *bench)
 	op_names[op_sa] = "sa";
 	op_names[op_sb] = "sb";
 	op_names[op_ss] = "ss";
+	ft_putstr_fd("[bench] ", 2);
 	i = 0;
-	while (i < op_counts)
+	while (i < 5)
 	{
 		ft_putstr_fd(op_names[i], 2);
 		ft_putstr_fd(": ", 2);
 		bench_printlong(bench->counts[i]);
-		ft_putchar_fd('\n', 2);
+		ft_putchar_fd(' ', 2);
+		i++;
+	}
+	ft_putchar_fd('\n', 2);
+	ft_putstr_fd("[bench] ", 2);
+	while (i < OPS_COUNT)
+	{
+		ft_putstr_fd(op_names[i], 2);
+		ft_putstr_fd(": ", 2);
+		bench_printlong(bench->counts[i]);
+		ft_putchar_fd(' ', 2);
 		i++;
 	}
 }
