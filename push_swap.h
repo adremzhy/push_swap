@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nhuskov <nhuskov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adremzhy <adremzhy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 16:24:02 by nhuskov           #+#    #+#             */
-/*   Updated: 2026/10/27 16:24:40 by nhuskov          ###   ########.fr       */
+/*   Updated: 2026/10/28 15:33:10 by adremzhy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ void	free_stack(t_stack *stack);
 void	error_free(t_stack *stack_a, t_stack *stack_b, char **args);
 int		get_chunk_size(int n);
 void	prepare_stacks(int argc, char **argv, t_stack *a, t_stack *b);
-
 
 // sort utils
 int		is_sorted(t_stack *stack);
