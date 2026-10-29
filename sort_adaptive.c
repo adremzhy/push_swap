@@ -16,6 +16,12 @@ void	sort_adaptive(t_stack *a, t_stack *b)
 {
 	double	d;
 
+	if (a->size <= 5)
+	{
+		sort_small(a, b);
+		a->bench->strategy = STRAT_SIMPLE;
+		return ;
+	}
 	d = disorder(a);
 	if (d < 0.2)
 	{

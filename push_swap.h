@@ -22,7 +22,7 @@
 # define OPS_COUNT	11
 
 // op indexes
-typedef enum enum_op
+typedef enum e_enum_op
 {
 	op_sa,
 	op_sb,

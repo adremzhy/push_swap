@@ -54,11 +54,8 @@ void	bench_print_disorder(t_bench *bench)
 	ft_putstr_fd("%\n", 2);
 }
 
-void	bench_prints_counts(t_bench *bench)
+static void	fill_op_names(char **op_names)
 {
-	char	*op_names[OPS_COUNT];
-	int		i;
-
 	op_names[op_pa] = "pa";
 	op_names[op_pb] = "pb";
 	op_names[op_ra] = "ra";
@@ -70,9 +67,14 @@ void	bench_prints_counts(t_bench *bench)
 	op_names[op_sa] = "sa";
 	op_names[op_sb] = "sb";
 	op_names[op_ss] = "ss";
-	ft_putstr_fd("[bench] ", 2);
-	i = 0;
-	while (i < 5)
+}
+
+static void	print_ops(t_bench *bench, char **op_names, int from, int to)
+{
+	int	i;
+
+	i = from;
+	while (i < to)
 	{
 		ft_putstr_fd(op_names[i], 2);
 		ft_putstr_fd(": ", 2);
@@ -80,14 +82,16 @@ void	bench_prints_counts(t_bench *bench)
 		ft_putchar_fd(' ', 2);
 		i++;
 	}
+}
+
+void	bench_prints_counts(t_bench *bench)
+{
+	char	*op_names[OPS_COUNT];
+
+	fill_op_names(op_names);
+		ft_putstr_fd("[bench] ", 2);
+	print_ops(bench, op_names, 0, 5);
 	ft_putchar_fd('\n', 2);
 	ft_putstr_fd("[bench] ", 2);
-	while (i < OPS_COUNT)
-	{
-		ft_putstr_fd(op_names[i], 2);
-		ft_putstr_fd(": ", 2);
-		bench_printlong(bench->counts[i]);
-		ft_putchar_fd(' ', 2);
-		i++;
-	}
+	print_ops(bench, op_names, 5, OPS_COUNT);
 }
