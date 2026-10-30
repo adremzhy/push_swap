@@ -46,11 +46,11 @@ void	bench_print_disorder(t_bench *bench)
 
 	scaled = (long)(bench->initial_disorder * 10000 + 0.5);
 	ft_putstr_fd("[bench] disorder:  ", 2);
-	bench_printlong(scaled / 100);
+	bench_printlong(scaled / 100, 2);
 	ft_putchar_fd('.', 2);
 	if (scaled % 100 < 10)
 		ft_putchar_fd('0', 2);
-	bench_printlong(scaled % 100);
+	bench_printlong(scaled % 100, 2);
 	ft_putstr_fd("%\n", 2);
 }
 
@@ -78,7 +78,7 @@ static void	print_ops(t_bench *bench, char **op_names, int from, int to)
 	{
 		ft_putstr_fd(op_names[i], 2);
 		ft_putstr_fd(": ", 2);
-		bench_printlong(bench->counts[i]);
+		bench_printlong(bench->counts[i], 2);
 		ft_putchar_fd(' ', 2);
 		i++;
 	}
