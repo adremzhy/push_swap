@@ -133,6 +133,8 @@ big inputs.
 | `20% – 50%` | medium | partly sorted: chunks work well |
 | `≥ 50%` | complex | very unsorted: radix scales best |
 
+For 5 or fewer elements, adaptive mode skips the disorder check and uses **Small sort**.
+
 ### Why these choices
 
 - Using ranks instead of raw values makes radix and chunking work the same way
