@@ -52,9 +52,9 @@ void	prepare_stacks(int argc, char **argv, t_stack *a, t_stack *b)
 
 int	main(int argc, char **argv)
 {
-	int	strategy;
-	int	bench_enbld;
-	t_bench bench;
+	int		strategy;
+	int		bench_enbld;
+	t_bench	bench;
 
 	bench_enbld = 0;
 	if (argc < 2)

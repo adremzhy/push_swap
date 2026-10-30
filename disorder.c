@@ -89,7 +89,7 @@ void	bench_prints_counts(t_bench *bench)
 	char	*op_names[OPS_COUNT];
 
 	fill_op_names(op_names);
-		ft_putstr_fd("[bench] ", 2);
+	ft_putstr_fd("[bench] ", 2);
 	print_ops(bench, op_names, 0, 5);
 	ft_putchar_fd('\n', 2);
 	ft_putstr_fd("[bench] ", 2);
